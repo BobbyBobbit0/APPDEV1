@@ -1,47 +1,56 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-function userProfileCard({ user }) {
-  const [messageCount, setMessageCount] = useState(0);
+function UserProfileCard() {
+    const [messageCount, setMessageCount] = useState(0);
+    const [isFavorited, setIsFavorited] = useState(false);
 
-  function handleSendMessage() {
-    setMessageCount(messageCount + 1);
-  }
+    function handleSendMessage() {
+        setMessageCount(messageCount + 1);
+    }
 
-  function handleReset() {
-    messageCount = 0;
-  }
+    function handleReset() {
+        setMessageCount(0);
+    }
 
-  return (
-    <div class="profile-card">
-      <img src={user.avatarUrl}>
+    function handleToggleFavorite() {
+        setIsFavorited(!isFavorited);
+    }
 
-      <h2>{user.name}</h2>
+    return (
+        <>
+            <div className="profile-card">
+                <img src={userData.avatarUrl} />
 
-      <label for="bio">Bio</label>
-      <p id="bio">{user.bio}</p>
+                <h2>{userData.name}</h2>
 
-      <h3>Skills</h3>
-      <ul>
-        {user.skills.map(skill => (
-          <li>{skill}</li>
-        ))}
-      </ul>
+                <label htmlFor="bio">Bio</label>
+                <p id="bio">{userData.bio}</p>
 
-      <div style="color: blue; font-weight: bold;">
-        Messages sent: {messageCount}
-      </div>
+                <h3>Skills</h3>
+                <ul>
+                    {userData.skills.map((skill) => (
+                        <li key={skill}>{skill}</li>
+                    ))}
+                </ul>
 
-      {if (user.isOnline) {
-        <span>🟢 Online</span>
-      } else {
-        <span>⚪ Offline</span>
-      }}
+                <div style={{ color: "blue", fontWeight: "bold" }}>
+                    Messages sent: {messageCount}
+                </div>
 
-      <button onClick={handleSendMessage()}>Send Message</button>
-      <button onClick={handleReset()}>Reset</button>
-    </div>
-    <p className="footer">Card last updated: {user.lastUpdated}</p>
-  );
+                {userData.isOnline ? <span>🟢 Online</span> : <span>⚪ Offline</span>}
+
+                <button onClick={handleSendMessage}>Send Message</button>
+                <button onClick={handleReset}>Reset</button>
+
+                {userData.isOnline && (
+                    <button onClick={handleToggleFavorite}>
+                        {isFavorited ? "★ Favorited" : "☆ Favorite"}
+                    </button>
+                )}
+            </div>
+            <p className="footer">Card last updated: {userData.lastUpdated}</p>
+        </>
+    );
 }
 
-export default userProfileCard;
+export default UserProfileCard;
