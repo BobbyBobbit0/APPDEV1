@@ -1,0 +1,1 @@
+analyze this project and I want you to upgrade it's design to something blank and elegent; take inspiration from iphone's UI. Do not rename, remove, or reorganize the existing project structure or required files.
