@@ -1,0 +1,3 @@
+### Key Realizations
+
+> In doing this assignment, I realized that having this refresher is important as there are some concepts that I forget such as the concept of Ternary operators where I understood that its purpose is to check the condition and what to do if the condition is True or False. Another topic that has been much clearer after doing this assignment is the string manipulation where I finally understood it clear that JS creates a new string instead of changing the original one.
