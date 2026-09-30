@@ -6,6 +6,7 @@ console.log(clean.includes("Rivera")); // true
 console.log(clean.slice(0, 5)); // "Bogart"
 console.log(`Full name: ${first} ${last}`);
 
+
 console.log(parseInt("42px"));   // 42
 console.log((19.9999).toFixed(2)); // "20.00"
  
