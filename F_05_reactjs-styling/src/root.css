@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #7a9b9b;
+  --color-primary-dark: #4d6878;
+  --color-text: #4a5a63;
+  --color-muted: #b9c6cc;
+  --color-placeholder: #8aa0ab;
+  --color-border: #4d6878;
+  --color-white: #fff;
+  --color-page: #f3f4f4;
+
+  /* Typography */
+  --font-main: "Encode Sans", sans-serif;
+  --font-size-base: 16px;
+
+  /* Shape */
+  --radius-panel: 20px;
+  --radius-button: 2px;
+}
